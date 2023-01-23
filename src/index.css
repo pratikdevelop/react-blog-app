@@ -1,13 +1,173 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;500&family=IBM+Plex+Sans:wght@300;400;500&family=Pacifico&family=Roboto:wght@300;400&display=swap'); 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Heebo', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Pacifico', cursive;
+  font-family: 'Roboto', sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: black;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.signup-div {
+  overflow: hidden;
+  display: flex;
+  background: #0b0b1c;
+  font-family: cursive;
+}
+.link {
+  font-size: 1.2rem;
+  font-family: fangsong;
+  font-weight: 600;
+  color: darkblue;
+}
+.signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+  padding: 3rem;
+  width: 50%;
+}
+.image-section {
+  width: 50%;
+  height: 100%;
+  display: flex;
+}
+img {
+  width: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0.1rem 0.01rem 0.2rem 0.1rem rgb(157 130 130 / 70%);
+    outline: none;
+    border: 2px solid rgba(0,0,0,0.05);
+    font-size: 1rem;
+    font-weight: 900;
+    font-family: cursive;
+    
+}
+.main-section,.sigup-section {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+   justify-content: space-between;
+}
+
+
+.signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items:center;
+  padding:  10rem  8rem ;
+  width: 50%;
+}
+.image-section {
+  width: 50%;
+  height: 100%;
+  display: flex ;
+}
+img {
+  width: 100%;
+}
+
+@media (max-width: 912px) {
+  .signin {
+    padding: 10rem 2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .signin ,.signup{
+    width: 100%;
+    display: flex; 
+    height: 100vh;
+    padding: 2rem;
+  }
+  .image-section{
+    display: none;
+  } 
+  .main-section {
+    padding: 7rem 0;
+  }
+}
+
+input,.select-input {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0.1rem 0.01rem 0.2rem 0.1rem rgb(157 130 130 / 70%);
+    outline: none;
+    border: 2px solid rgba(0,0,0,0.05);
+    font-size: 1rem;
+    font-weight: 900;
+    font-family: cursive;
+    
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+}
+.submit-button {
+  background: rgb(147, 55, 212);
+  padding: 10px;
+  width: 100%;
+    border-radius: 25px;
+  box-shadow: 0.2rem 0.2rem 0.2rem #8652ad;
+  border: 2px solid #613493;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+.heading {
+  font-size: 2rem;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  
+}
+.blog{
+  display: flex;
+  /* width: 100vw; */
+  margin: 2rem 0;
+  /* align-items: stretch;
+  background: white;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem rgb(255 255 255 / 90%);*/
+  border-bottom: 2px solid rgba(0,0,0,0.5); 
+  padding: 2rem;
+  text-align: start;
+}
+.image{
+  width: 50%;
+}
+.blog-desc{
+  width: 50%;
+  text-align: start;
+}
+.title{
+    font-size: 1rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+    color: gray;
+    font-family: fangsong;
+}
+.btn{
+  background-color: rgb(35, 6, 56);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
