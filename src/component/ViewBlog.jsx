@@ -2,9 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "./Header";
+import jwt_decode from "jwt-decode";
+import { NavLink } from "react-router-dom";
 const ViewBlog = () => {
   const [blog, setBlog] = useState({});
   let { blogId } = useParams();
+  const decodedToken = jwt_decode(localStorage.getItem('token'));
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       axios
@@ -46,6 +50,16 @@ const ViewBlog = () => {
               </span>
               <span className="text-lg  text-gray-500"> 39 comments
               </span>
+              {
+                blog.author ===  decodedToken.user_id? 
+                <NavLink
+                to={`/edit-post/${blog.id}`}
+                className="capitalize font-serif text-gray-900 font-semibold "
+            >
+                edit blog
+            </NavLink>
+            : null
+              }
             </div>
             <div className="flex flex-col items-start w-full space-y-6">
               <h1 className="font-bold text-2xl capitalize"> {blog.summary}</h1>

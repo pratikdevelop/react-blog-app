@@ -17,6 +17,7 @@ const App = () => {
                     <Route path="/"element={(!token) ? < Navigate to='/signin' /> : < Home />}></Route> 
                     <Route path="/my-posts"element={(!token) ? < Navigate to='/signin' /> : <Post/>}></Route> 
                     <Route path="/blog/:blogId" element={(!token) ? < Navigate to='/signin' /> : < ViewBlog />}></Route> 
+                    <Route path="/edit-post/:blogId" element={(!token) ? < Navigate to='/signin' /> : < Post />}></Route> 
                     {/* <Route path="/profile/:id" element={(!token) ? < Navigate to='/signin' /> : < Profile />}></Route> 
                     <Route path="/reset-password"element={< ResetPassword />} > </Route>
                     <Route path="/verify-otp"element={< ResetPassword />} > </Route>

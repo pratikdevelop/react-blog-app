@@ -134,10 +134,15 @@ input,.select-input {
   color: white;
 }
 .heading {
-  font-size: 2rem;
+  font-size: 4rem;
   font-family: 'Times New Roman', Times, serif;
+  font-family: 'Pacifico', cursive;
+  font-family: 'Roboto', sans-serif;
   color: black;
   
+}
+h1,span{
+  font-family: cursive;
 }
 .blog{
   display: flex;

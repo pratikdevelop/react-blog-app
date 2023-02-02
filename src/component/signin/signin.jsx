@@ -21,7 +21,12 @@ const Signin = () => {
       onSubmit: (values) => {
         console.log(errors);
         axios
-          .post(`http://localhost:8000/auth/signin`, values)
+          .post(`http://localhost:8000/auth/signin`, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            data: values
+        })
           .then((response) => {
             localStorage.setItem('token',response.data.token.refresh);
             console.log(response.data.token);

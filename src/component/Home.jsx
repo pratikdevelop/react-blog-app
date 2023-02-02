@@ -38,39 +38,29 @@ const Home = () => {
 
       </div>
       <h1 className="text-center text-3xl font-semibold"> all Blogs</h1>
-      <div className="grid grid-cols-1 gap-2 w-full space-y-2 p-2">
+      <div className="grid grid-cols-1 gap-2 w-full  p-2">
         {blogs.map((blog, index) => {
           return (
             <>
-              <div className="blog flex items-start w-full mt-3 space-x-5 overflow-x-hidden" key={index}>
-                <img  className="w-1/3" src={"http://localhost:8000" + blog.file} alt="" />
-                <div className="flex flex-col items-start w-full space-y-2">
+              <div className="blog flex items-start w-full  space-x-5 overflow-x-hidden" key={index}>
+                <img  className="w-1/3 h-40" src={"http://localhost:8000" + blog.file} alt="" />
+                <div className="flex flex-col items-start w-full space-y-1">
                   <h1 className="font-bold text-lg capitalize"> {blog.summary}</h1>
                   <h1 className="text-sm font-semibold"> {blog.title}</h1>
-                  <p className="title" contentEditable='true'
+                  <p className="title"
                     dangerouslySetInnerHTML={{__html: blog.content.slice(0,500)
         }}>
                     
                   </p>
-                  <span>
                     {blog.referel_link ? (
-                      <>
-                        see more
-                        <a 
-                          href={blog.referel_link}
-                          
-                          className="nav-link pl-2 text-blue-600 underline"
-                        >
-                          {blog.referel_link}
-                        </a>
-                      </>
+                    <div className="flex items-center flex-wrap">
+                       <span>see more</span> 
+                       <a  href={blog.referel_link} className="nav-link pl-2 text-blue-600 underline">{blog.referel_link}</a></div>
                     ) : null}
 
-                  </span>
                   <span> updated by : {new Date(blog.createdAt).toDateString()}</span>
-                  <span> author : <b>{blog.created_by}</b>
-                  </span>
-                 <span><NavLink to={'/blog/'+blog.id}  > read more</NavLink></span>  
+                  <span> author : <b>{blog.created_by}</b></span>
+                 <span className="block px-6 py-2  text-base hover:text-white hover:shadow-2xl text-white font-bold rounded-full border-2 border-green-600 shadow-green-800 shadow bg-green-400"><NavLink to={'/blog/'+blog.id}  > read more</NavLink></span>  
                 </div>
              </div>
             </>
